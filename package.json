@@ -1,6 +1,6 @@
 {
   "name": "simple-pagination-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight pagination utility with math-based approach. 22x faster than alternatives.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
