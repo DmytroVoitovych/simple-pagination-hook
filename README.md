@@ -179,8 +179,8 @@ li[data-page-gap]::before {
 
 /* Or customize to your preference */
 ```
-
-[Image Example](./dottsExample.png)
+### Image Example
+![](./dottsExample.png)
 
 ### Option 2: Component-based
 
