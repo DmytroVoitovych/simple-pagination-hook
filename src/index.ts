@@ -71,17 +71,16 @@ export const useSimplePagination = (
   const isMinimalCase = totalPages <= 1 || visibleButtons <= 1;
   const warnInfo = `Pagination: visibleButtons=${visibleButtons} is too small. Auto-adjusted to 5 for proper UX. Please use at least ${MIN_BTN} buttons.`;
 
+  let adjustedVisibleButtons = visibleButtons;
+
   if (isMinimalCase) return totalPages >= 1 ? [currentPage] : [];
 
   if (visibleButtons < MIN_BTN) {
     console.warn(warnInfo);
+    adjustedVisibleButtons = MIN_BTN;
   }
 
-  const adjustedVisibleButtons =
-    visibleButtons < MIN_BTN ? MIN_BTN : visibleButtons;
-
-  const excludedStatic =
-    Math.min(adjustedVisibleButtons, totalPages) - fixedButtons;
+  const excludedStatic = Math.min(adjustedVisibleButtons, totalPages) - fixedButtons;
   const length = Math.max(0, excludedStatic);
 
   const halfWindow = Math.floor(length / 2) + shift;
