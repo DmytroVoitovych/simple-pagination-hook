@@ -73,7 +73,7 @@ export const useSimplePagination = (
 
   let adjustedVisibleButtons = visibleButtons;
 
-  if (isMinimalCase) return totalPages >= 1 ? [currentPage] : [];
+  if (isMinimalCase) return totalPages >= 1 ? [Math.min(currentPage,totalPages)] : [];
 
   if (visibleButtons < MIN_BTN) {
     console.warn(warnInfo);

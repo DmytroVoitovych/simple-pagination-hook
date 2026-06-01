@@ -18,6 +18,11 @@ describe("useSimplePagination", () => {
   it("total pages less than visible buttons", () => {
     expect(useSimplePagination(1, 5, 7)).toEqual([1, 2, 3, 4, 5]);
   });
+  
+  // currentPage > totalPages
+  it("currentPage > totalPages when totalPages is 1 returns [1]", () => {
+  expect(useSimplePagination(2, 1, 7)).toEqual([1]);
+});
 
   // Navigation through list
   it("beginning of list (page 1)", () => {
